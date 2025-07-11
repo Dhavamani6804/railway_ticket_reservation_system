@@ -13,11 +13,29 @@ public class TicketBooker {
     static Queue<Integer> racList = new LinkedList<>();
     static List<Integer> bookedTicketList = new ArrayList<>();
 
-    static List<Integer> lowerBerthsPositions = new ArrayList<>(Arrays.asList(1));
-    static List<Integer> middleBerthsPositions = new ArrayList<>(Arrays.asList(1));
-    static List<Integer> upperBerthsPositions = new ArrayList<>(Arrays.asList(1));
-    static List<Integer> racPositions = new ArrayList<>(Arrays.asList(1));
-    static List<Integer> waitingListPositions = new ArrayList<>(Arrays.asList(1));
+    static List<Integer> lowerBerthsPositions = new ArrayList<>(Arrays.asList());
+    static List<Integer> middleBerthsPositions = new ArrayList<>(Arrays.asList());
+    static List<Integer> upperBerthsPositions = new ArrayList<>(Arrays.asList());
+    static List<Integer> racPositions = new ArrayList<>(Arrays.asList());
+    static List<Integer> waitingListPositions = new ArrayList<>(Arrays.asList());
+
+    static {
+        for (int i = 1; i <= availableLowerBerths; i++) {
+            lowerBerthsPositions.add(i);
+        }
+        for (int i = 1; i <= availableMiddleBerths; i++) {
+            middleBerthsPositions.add(i);
+        }
+        for (int i = 1; i <= availableUpperBerths; i++) {
+            upperBerthsPositions.add(i);
+        }
+        for (int i = 1; i <= availableRacTickets; i++) {
+            racPositions.add(i);
+        }
+        for (int i = 1; i <= availableWaitingList; i++) {
+            waitingListPositions.add(i);
+        }
+    }
 
     static Map<Integer, Passenger> passengers = new HashMap<>();
 
