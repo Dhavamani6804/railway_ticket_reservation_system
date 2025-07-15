@@ -78,12 +78,21 @@ public class App {
             int choice = s.nextInt();
             switch (choice) {
                 case 1: {
-                    System.out.println("Enter Passenger name,age and berth preference (L,M or U)");
-                    String name = s.next();
-                    int age = s.nextInt();
-                    String berthPreference = s.next();
-                    Passenger p = new Passenger(name, age, berthPreference);
-                    bookTicket(p);
+                    System.out.println("Enter the number of passengers to book : ");
+                    int seets = s.nextInt();
+                    if (seets <= 0) {
+                        System.out.println("Invalid number of passengers");
+                        break;
+                    } else {
+                        for (int i = 0; i < seets; i++) {
+                            System.out.println("Enter Passenger name,age and berth preference (L,M or U)");
+                            String name = s.next();
+                            int age = s.nextInt();
+                            String berthPreference = s.next();
+                            Passenger p = new Passenger(name, age, berthPreference);
+                            bookTicket(p);
+                        }
+                    }
                 }
                 break;
                 case 2: {
